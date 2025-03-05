@@ -1,0 +1,25 @@
+.chat__send-message-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  width: 100%;
+  padding: var(--padding);
+  border-top: 1px solid var(--border-color);
+}
+
+.chat__input-message {
+  width: 100%;
+  min-height: 50px;
+  resize: none;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+.chat__buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+

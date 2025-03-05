@@ -1,0 +1,11 @@
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
+
+  .app-container {
+    min-width: 1024px;
+    max-width: 1024px;
+  }
+}
+

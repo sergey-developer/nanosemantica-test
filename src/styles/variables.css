@@ -1,0 +1,21 @@
+:root {
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #252525;
+  --color-blue: #1890ff;
+
+  --background-color: #f0f0f0;
+
+  /* Borders */
+  --padding: 0.5rem 0.8rem;
+
+  /* Borders */
+  --border-color: #ccc;
+  --border-radius: 0.3rem;
+
+  /* Gaps */
+  --gap: 0.5rem;
+
+  /* Shadows */
+  --box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
