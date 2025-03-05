@@ -1,6 +1,6 @@
 .button {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: var(--gap);
   padding: var(--padding);
@@ -8,6 +8,10 @@
   border: none;
   border-radius: var(--border-radius);
   cursor: pointer;
+}
+
+.button .spinner {
+  margin: 0;
 }
 
 .button:disabled {

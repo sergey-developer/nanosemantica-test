@@ -7,8 +7,8 @@ import './style.css'
 const Button: FC<ButtonProps> = ({children, loading, variant = 'primary', ...props}) => {
   return (
     <button {...props} className={`button button--${variant}`}>
-      {loading && <Spinner size='sm'/>}
       {children}
+      {loading && <Spinner size='sm'/>}
     </button>
   )
 }
