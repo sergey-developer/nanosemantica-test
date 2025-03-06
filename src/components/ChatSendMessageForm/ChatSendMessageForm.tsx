@@ -30,7 +30,7 @@ const ChatSendMessageForm: FC<SendMessageFormProps> = ({onSubmit, onRestart, isL
       <div className="chat__buttons">
         <Button type='submit' loading={isLoading} disabled={isLoading || !message}>Отправить</Button>
 
-        <Button variant='secondary' disabled={isLoading} onClick={onRestart}>Перезапустить</Button>
+        <Button variant='secondary' disabled={isLoading} onClick={onRestart}>Новый диалог</Button>
       </div>
     </form>
   )

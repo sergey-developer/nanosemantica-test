@@ -1,2 +1,2 @@
-export {default as SendMessageForm} from "./ChatSendMessageForm";
+export {default as ChatSendMessageForm} from "./ChatSendMessageForm";
 export * from './types'

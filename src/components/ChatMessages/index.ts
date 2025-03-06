@@ -1,3 +1,3 @@
-export {default as Messages} from './ChatMessages'
+export {default as ChatMessages} from './ChatMessages'
 export * from './types'
 export * from './constants'

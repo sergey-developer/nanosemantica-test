@@ -10,10 +10,6 @@
   cursor: pointer;
 }
 
-.button .spinner {
-  margin: 0;
-}
-
 .button:disabled {
   cursor: not-allowed;
   opacity: 0.6;

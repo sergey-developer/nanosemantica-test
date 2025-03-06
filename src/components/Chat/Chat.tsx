@@ -1,7 +1,7 @@
 import {FC, useCallback, useEffect, useState} from 'react';
 
-import {MessageTypeEnum, Messages} from "../ChatMessages";
-import {SendMessageForm} from "../ChatSendMessageForm";
+import {MessageTypeEnum, ChatMessages} from "../ChatMessages";
+import {ChatSendMessageForm} from "../ChatSendMessageForm";
 import useInitChat from "../../hooks/chat/useInitChat";
 import useSendReadyEvent from "../../hooks/chat/useSendReadyEvent";
 import useSendMessage from "../../hooks/chat/useSendMessage";
@@ -10,6 +10,7 @@ import {Spinner} from "../Spinner";
 import {initDialogHistoryState} from "./utils";
 import {DialogHistoryItem} from "./types";
 import chatLocalStorageService from "../../services/chatLocalStorageService/chatLocalStorage.service";
+import {getUniqId} from "../../utils/uniqId";
 import './style.css';
 
 const Chat: FC = () => {
@@ -20,9 +21,13 @@ const Chat: FC = () => {
   const {mutation: sendMessage, loading: sendMessageIsLoading, error: sendMessageError} = useSendMessage()
 
   const addMessageToDialogHistory = useCallback((text: string, type: MessageTypeEnum) => {
-    setDialogHistory(dialogHistory =>
-      [...dialogHistory, {text: text || 'Пустой ответ сервера', type}]
-    )
+    const newDialogHistoryItem: DialogHistoryItem = {
+      id: getUniqId(),
+      text: text || 'Пустой ответ сервера',
+      type
+    }
+
+    setDialogHistory(dialogHistory => [...dialogHistory, newDialogHistoryItem])
   }, [setDialogHistory])
 
   useEffect(() => {
@@ -74,11 +79,11 @@ const Chat: FC = () => {
   return (
     <div className="chat">
       {initChatIsLoading
-        ? <Spinner/>
+        ? <Spinner centered />
         : <>
-          <Messages data={dialogHistory}/>
+          <ChatMessages data={dialogHistory}/>
 
-          <SendMessageForm
+          <ChatSendMessageForm
             onSubmit={onSendMessage}
             onRestart={onRestartChat}
             isLoading={sendMessageIsLoading}
